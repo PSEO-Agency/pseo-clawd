@@ -29,13 +29,34 @@ const navLinks = [
     ],
   },
   {
-    label: "Compare",
-    href: "/compare",
+    label: "Features",
+    href: "/features",
     children: [
+      { label: "Datasets", href: "/features/datasets" },
+      { label: "Drip Publishing", href: "/features/drip-publishing" },
+      { label: "Internal Linking", href: "/features/internal-linking" },
+      { label: "AI Content", href: "/features/ai-content" },
+      { label: "Indexing", href: "/features/indexing" },
+    ],
+  },
+  {
+    label: "Integrations",
+    href: "/integrations",
+    children: [
+      { label: "WordPress", href: "/integrations/wordpress" },
+      { label: "Webflow", href: "/integrations/webflow" },
+      { label: "Shopify", href: "/integrations/shopify" },
+      { label: "Next.js", href: "/integrations/nextjs" },
+    ],
+  },
+  {
+    label: "Resources",
+    href: "/guides",
+    children: [
+      { label: "Guides", href: "/guides" },
+      { label: "Compare Tools", href: "/compare" },
       { label: "vs SEOmatic", href: "/compare/pseo-growth-stack-vs-seomatic" },
       { label: "vs Byword", href: "/compare/pseo-growth-stack-vs-byword" },
-      { label: "vs Letterdrop", href: "/compare/pseo-growth-stack-vs-letterdrop" },
-      { label: "View All →", href: "/compare" },
     ],
   },
   { label: "Pricing", href: "/pricing" },
@@ -60,7 +81,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-4">
             {navLinks.map((link) => (
               <div
                 key={link.label}
@@ -70,7 +91,7 @@ export default function Navbar() {
               >
                 <Link
                   href={link.href}
-                  className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors py-2"
+                  className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors py-2 px-2"
                 >
                   {link.label}
                   {link.children && <ChevronDown className="w-4 h-4" />}
@@ -99,7 +120,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop CTAs */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-3">
             <Button variant="ghost" size="sm">
               Sign In
             </Button>
@@ -111,7 +132,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-foreground"
+            className="lg:hidden p-2 text-foreground"
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -126,7 +147,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass border-t border-border/50 max-h-[80vh] overflow-y-auto"
+            className="lg:hidden glass border-t border-border/50 max-h-[80vh] overflow-y-auto"
           >
             <div className="container px-4 py-4 space-y-4">
               {navLinks.map((link) => (

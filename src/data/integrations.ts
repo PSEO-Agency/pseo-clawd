@@ -1,0 +1,88 @@
+export const integrations = [
+  {
+    slug: "wordpress",
+    name: "WordPress",
+    title: "Programmatic SEO for WordPress",
+    description: "Generate thousands of SEO-optimized pages and publish directly to your WordPress site.",
+    logo: "🔷",
+    features: [
+      "Direct WordPress REST API integration",
+      "Auto-publish to any post type",
+      "Custom field mapping (ACF, etc.)",
+      "Yoast/RankMath meta sync",
+      "Media library integration",
+      "Scheduled publishing",
+    ],
+    steps: [
+      "Connect your WordPress site via REST API",
+      "Map your data fields to WordPress fields",
+      "Configure publishing settings",
+      "Generate and publish pages automatically",
+    ],
+  },
+  {
+    slug: "webflow",
+    name: "Webflow",
+    title: "Programmatic SEO for Webflow",
+    description: "Scale your Webflow CMS with programmatic pages. No code, no limits.",
+    logo: "🟦",
+    features: [
+      "Webflow CMS API integration",
+      "Collection item automation",
+      "Rich text field support",
+      "Image upload handling",
+      "Reference field linking",
+      "Publish to staging or live",
+    ],
+    steps: [
+      "Connect your Webflow site via API token",
+      "Select your CMS collection",
+      "Map data to collection fields",
+      "Generate items and publish",
+    ],
+  },
+  {
+    slug: "shopify",
+    name: "Shopify",
+    title: "Programmatic SEO for Shopify",
+    description: "Create product pages, collection pages, and blog posts at scale for your Shopify store.",
+    logo: "🟢",
+    features: [
+      "Product page generation",
+      "Collection page automation",
+      "Blog post publishing",
+      "Metafield support",
+      "SEO meta optimization",
+      "Variant handling",
+    ],
+    steps: [
+      "Connect your Shopify store via Admin API",
+      "Choose content type (products, blogs, pages)",
+      "Map your data to Shopify fields",
+      "Generate and publish at scale",
+    ],
+  },
+  {
+    slug: "nextjs",
+    name: "Next.js",
+    title: "Programmatic SEO for Next.js",
+    description: "Build SEO-optimized static pages with Next.js App Router and generateStaticParams.",
+    logo: "⚫",
+    features: [
+      "Static site generation (SSG)",
+      "Dynamic route generation",
+      "Built-in metadata API",
+      "Automatic sitemap generation",
+      "ISR (Incremental Static Regeneration)",
+      "Edge-ready deployment",
+    ],
+    steps: [
+      "Export your data as JSON or connect API",
+      "Use generateStaticParams for routes",
+      "Template with React components",
+      "Deploy to Vercel or any platform",
+    ],
+  },
+];
+
+export type Integration = typeof integrations[number];

@@ -17,16 +17,24 @@ const footerLinks = {
     { label: "Healthcare", href: "/industries/healthcare" },
     { label: "All Industries", href: "/industries" },
   ],
-  compare: [
-    { label: "vs SEOmatic", href: "/compare/pseo-growth-stack-vs-seomatic" },
-    { label: "vs Byword", href: "/compare/pseo-growth-stack-vs-byword" },
-    { label: "vs Letterdrop", href: "/compare/pseo-growth-stack-vs-letterdrop" },
-    { label: "All Comparisons", href: "/compare" },
+  features: [
+    { label: "Datasets", href: "/features/datasets" },
+    { label: "Drip Publishing", href: "/features/drip-publishing" },
+    { label: "Internal Linking", href: "/features/internal-linking" },
+    { label: "AI Content", href: "/features/ai-content" },
+    { label: "Indexing", href: "/features/indexing" },
   ],
-  alternatives: [
+  integrations: [
+    { label: "WordPress", href: "/integrations/wordpress" },
+    { label: "Webflow", href: "/integrations/webflow" },
+    { label: "Shopify", href: "/integrations/shopify" },
+    { label: "Next.js", href: "/integrations/nextjs" },
+  ],
+  resources: [
+    { label: "Guides", href: "/guides" },
+    { label: "Compare Tools", href: "/compare" },
     { label: "SEOmatic Alternative", href: "/alternative/seomatic-alternative" },
     { label: "Byword Alternative", href: "/alternative/byword-alternative" },
-    { label: "Surfer SEO Alternative", href: "/alternative/surfer-seo-alternative" },
   ],
   company: [
     { label: "Pricing", href: "/pricing" },
@@ -46,9 +54,9 @@ export default function Footer() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="grid grid-cols-2 md:grid-cols-6 gap-8 mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 mb-12">
             {/* Brand */}
-            <div className="col-span-2">
+            <div className="col-span-2 md:col-span-4 lg:col-span-1">
               <Link href="/" className="text-xl font-bold gradient-text">
                 PSEO Growth Stack
               </Link>
@@ -63,10 +71,7 @@ export default function Footer() {
               <ul className="space-y-2">
                 {footerLinks.useCases.map((link) => (
                   <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                    >
+                    <Link href={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                       {link.label}
                     </Link>
                   </li>
@@ -80,10 +85,7 @@ export default function Footer() {
               <ul className="space-y-2">
                 {footerLinks.industries.map((link) => (
                   <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                    >
+                    <Link href={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                       {link.label}
                     </Link>
                   </li>
@@ -91,29 +93,41 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Compare */}
+            {/* Features */}
             <div>
-              <h4 className="font-semibold mb-4">Compare</h4>
+              <h4 className="font-semibold mb-4">Features</h4>
               <ul className="space-y-2">
-                {footerLinks.compare.map((link) => (
+                {footerLinks.features.map((link) => (
                   <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                    >
+                    <Link href={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                       {link.label}
                     </Link>
                   </li>
                 ))}
               </ul>
-              <h4 className="font-semibold mb-4 mt-6">Alternatives</h4>
+            </div>
+
+            {/* Integrations */}
+            <div>
+              <h4 className="font-semibold mb-4">Integrations</h4>
               <ul className="space-y-2">
-                {footerLinks.alternatives.map((link) => (
+                {footerLinks.integrations.map((link) => (
                   <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                    >
+                    <Link href={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Resources */}
+            <div>
+              <h4 className="font-semibold mb-4">Resources</h4>
+              <ul className="space-y-2">
+                {footerLinks.resources.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                       {link.label}
                     </Link>
                   </li>
@@ -127,10 +141,7 @@ export default function Footer() {
               <ul className="space-y-2">
                 {footerLinks.company.map((link) => (
                   <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                    >
+                    <Link href={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                       {link.label}
                     </Link>
                   </li>
