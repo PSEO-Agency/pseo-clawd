@@ -1,0 +1,68 @@
+export const comparisons = [
+  {
+    slug: "pseo-growth-stack-vs-seomatic",
+    competitor: "SEOmatic",
+    title: "PSEO Growth Stack vs SEOmatic",
+    description: "Compare PSEO Growth Stack and SEOmatic for programmatic SEO. See features, pricing, and which platform is right for you.",
+    competitorDescription: "SEOmatic is a programmatic SEO platform focused on content generation from templates and CSV data.",
+    advantages: [
+      { feature: "Free tier", us: "Yes - full stack included", them: "No - paid only" },
+      { feature: "Built-in CRM", us: "Included free", them: "Not included" },
+      { feature: "AI Agents", us: "Included for automation", them: "Basic AI content only" },
+      { feature: "Free websites for listings", us: "Yes - via Wellplan", them: "No" },
+      { feature: "White-label", us: "Full white-label", them: "Limited" },
+      { feature: "Marketplace/Directory", us: "Built-in support", them: "Manual setup" },
+    ],
+    verdict: "PSEO Growth Stack offers more value with its free tier, built-in CRM, AI agents, and marketplace capabilities. Best for agencies and platforms that want a complete growth stack.",
+  },
+  {
+    slug: "pseo-growth-stack-vs-byword",
+    competitor: "Byword",
+    title: "PSEO Growth Stack vs Byword",
+    description: "Compare PSEO Growth Stack and Byword for AI-powered SEO content. See which platform delivers better results at scale.",
+    competitorDescription: "Byword is an AI writing tool that generates SEO articles from keywords.",
+    advantages: [
+      { feature: "Page types", us: "Landing pages, directories, marketplaces", them: "Blog articles only" },
+      { feature: "Data integration", us: "APIs, databases, live sync", them: "Keywords only" },
+      { feature: "CRM & Lead capture", us: "Built-in", them: "Not available" },
+      { feature: "Free tier", us: "Yes", them: "No" },
+      { feature: "Programmatic templates", us: "Full template system", them: "AI-only generation" },
+      { feature: "Multi-site support", us: "Yes - directories & marketplaces", them: "Single site" },
+    ],
+    verdict: "Byword is great for AI blog content. PSEO Growth Stack is better for programmatic landing pages, directories, and full growth infrastructure.",
+  },
+  {
+    slug: "pseo-growth-stack-vs-letterdrop",
+    competitor: "Letterdrop",
+    title: "PSEO Growth Stack vs Letterdrop",
+    description: "Compare PSEO Growth Stack and Letterdrop for content marketing automation. Features, pricing, and use cases compared.",
+    competitorDescription: "Letterdrop is a content marketing platform with SEO workflows and AI assistance.",
+    advantages: [
+      { feature: "Programmatic SEO", us: "Core focus - thousands of pages", them: "Limited - mostly editorial" },
+      { feature: "Free tier", us: "Yes", them: "No" },
+      { feature: "Directory/Marketplace", us: "Built-in", them: "Not supported" },
+      { feature: "AI Agents", us: "Automation agents included", them: "AI writing assistance only" },
+      { feature: "CRM integration", us: "Built-in CRM", them: "Third-party required" },
+      { feature: "Scalability", us: "Millions of pages", them: "Editorial scale" },
+    ],
+    verdict: "Letterdrop excels at editorial content workflows. PSEO Growth Stack is built for programmatic SEO at massive scale with full infrastructure.",
+  },
+  {
+    slug: "pseo-growth-stack-vs-webflow",
+    competitor: "Webflow",
+    title: "PSEO Growth Stack vs Webflow",
+    description: "Compare PSEO Growth Stack and Webflow for building SEO-optimized websites at scale. CMS, automation, and features compared.",
+    competitorDescription: "Webflow is a visual website builder with CMS capabilities.",
+    advantages: [
+      { feature: "Programmatic pages", us: "Automated generation at scale", them: "Manual CMS entries" },
+      { feature: "SEO optimization", us: "Built-in pSEO best practices", them: "Manual optimization" },
+      { feature: "Free tier", us: "Yes - full stack", them: "Limited free tier" },
+      { feature: "CRM", us: "Included", them: "Third-party required" },
+      { feature: "AI content", us: "Built-in AI agents", them: "Not included" },
+      { feature: "Template automation", us: "Data-driven generation", them: "Manual design per page" },
+    ],
+    verdict: "Webflow is a powerful website builder. PSEO Growth Stack is purpose-built for programmatic SEO, automating what would take thousands of hours in Webflow.",
+  },
+];
+
+export type Comparison = typeof comparisons[number];

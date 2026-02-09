@@ -2,19 +2,48 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 const navLinks = [
-  { label: "Features", href: "#features" },
-  { label: "For Agencies", href: "#agencies" },
-  { label: "For Enterprises", href: "#enterprises" },
-  { label: "How It Works", href: "#how-it-works" },
+  {
+    label: "Use Cases",
+    href: "/use-cases",
+    children: [
+      { label: "Location Pages", href: "/use-cases/location-pages" },
+      { label: "Comparison Pages", href: "/use-cases/comparison-pages" },
+      { label: "Integration Pages", href: "/use-cases/integration-pages" },
+      { label: "Alternative Pages", href: "/use-cases/alternative-pages" },
+    ],
+  },
+  {
+    label: "Industries",
+    href: "/industries",
+    children: [
+      { label: "SaaS", href: "/industries/saas" },
+      { label: "E-commerce", href: "/industries/ecommerce" },
+      { label: "Real Estate", href: "/industries/real-estate" },
+      { label: "Healthcare", href: "/industries/healthcare" },
+      { label: "View All →", href: "/industries" },
+    ],
+  },
+  {
+    label: "Compare",
+    href: "/compare",
+    children: [
+      { label: "vs SEOmatic", href: "/compare/pseo-growth-stack-vs-seomatic" },
+      { label: "vs Byword", href: "/compare/pseo-growth-stack-vs-byword" },
+      { label: "vs Letterdrop", href: "/compare/pseo-growth-stack-vs-letterdrop" },
+      { label: "View All →", href: "/compare" },
+    ],
+  },
+  { label: "Pricing", href: "/pricing" },
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   return (
     <motion.nav
@@ -31,15 +60,41 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
-              <Link
+              <div
                 key={link.label}
-                href={link.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="relative"
+                onMouseEnter={() => link.children && setOpenDropdown(link.label)}
+                onMouseLeave={() => setOpenDropdown(null)}
               >
-                {link.label}
-              </Link>
+                <Link
+                  href={link.href}
+                  className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors py-2"
+                >
+                  {link.label}
+                  {link.children && <ChevronDown className="w-4 h-4" />}
+                </Link>
+                {link.children && openDropdown === link.label && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="absolute top-full left-0 pt-2"
+                  >
+                    <div className="w-56 p-2 rounded-xl glass gradient-border shadow-xl">
+                      {link.children.map((child) => (
+                        <Link
+                          key={child.href}
+                          href={child.href}
+                          className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-lg transition-colors"
+                        >
+                          {child.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </div>
             ))}
           </div>
 
@@ -71,18 +126,33 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass border-t border-border/50"
+            className="md:hidden glass border-t border-border/50 max-h-[80vh] overflow-y-auto"
           >
             <div className="container px-4 py-4 space-y-4">
               {navLinks.map((link) => (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.label}
-                </Link>
+                <div key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="block text-sm font-medium text-foreground py-2"
+                    onClick={() => !link.children && setIsOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                  {link.children && (
+                    <div className="pl-4 space-y-2 mt-2">
+                      {link.children.map((child) => (
+                        <Link
+                          key={child.href}
+                          href={child.href}
+                          className="block text-sm text-muted-foreground hover:text-foreground py-1"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {child.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
               ))}
               <div className="pt-4 border-t border-border/50 space-y-2">
                 <Button variant="ghost" size="sm" className="w-full">

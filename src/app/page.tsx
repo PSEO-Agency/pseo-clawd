@@ -6,6 +6,7 @@ import PSEOBuilder from "@/components/landing/PSEOBuilder";
 import TwoSidedGrowth from "@/components/landing/TwoSidedGrowth";
 import ForAudiences from "@/components/landing/ForAudiences";
 import HowItWorks from "@/components/landing/HowItWorks";
+import ROICalculator from "@/components/landing/ROICalculator";
 import FinalCTA from "@/components/landing/FinalCTA";
 import Footer from "@/components/landing/Footer";
 
@@ -68,6 +69,7 @@ export default function Home() {
         <Navbar />
         <Hero />
         <WhatYouCanBuild />
+        <ROICalculator />
         <FreeLayer />
         <PSEOBuilder />
         <TwoSidedGrowth />
