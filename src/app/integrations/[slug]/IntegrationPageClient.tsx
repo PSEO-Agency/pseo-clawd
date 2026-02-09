@@ -7,8 +7,18 @@ import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import Link from "next/link";
 import { Integration } from "@/data/integrations";
+import { WordPressLogo, WebflowLogo, ShopifyLogo, NextjsLogo } from "@/components/logos";
+
+const logoComponents: Record<string, React.ComponentType<{ className?: string }>> = {
+  wordpress: WordPressLogo,
+  webflow: WebflowLogo,
+  shopify: ShopifyLogo,
+  nextjs: NextjsLogo,
+};
 
 export default function IntegrationPageClient({ integration }: { integration: Integration }) {
+  const LogoComponent = logoComponents[integration.logoKey];
+
   return (
     <main className="min-h-screen bg-background">
       <Navbar />
@@ -23,7 +33,14 @@ export default function IntegrationPageClient({ integration }: { integration: In
             animate={{ opacity: 1, y: 0 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <div className="text-6xl mb-6">{integration.logo}</div>
+            <div 
+              className="w-24 h-24 rounded-2xl flex items-center justify-center mx-auto mb-6"
+              style={{ backgroundColor: `${integration.color}15` }}
+            >
+              {LogoComponent && (
+                <LogoComponent className="w-14 h-14" />
+              )}
+            </div>
             <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
               Integration
             </span>
@@ -96,7 +113,10 @@ export default function IntegrationPageClient({ integration }: { integration: In
                 transition={{ delay: index * 0.1 }}
                 className="flex items-start gap-4 mb-6"
               >
-                <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 font-bold text-primary">
+                <div 
+                  className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 font-bold"
+                  style={{ backgroundColor: `${integration.color}20`, color: integration.color }}
+                >
                   {index + 1}
                 </div>
                 <div className="p-4 rounded-xl glass gradient-border flex-1">

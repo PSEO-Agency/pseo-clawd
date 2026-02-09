@@ -4,7 +4,8 @@ export const integrations = [
     name: "WordPress",
     title: "Programmatic SEO for WordPress",
     description: "Generate thousands of SEO-optimized pages and publish directly to your WordPress site.",
-    logo: "🔷",
+    logoKey: "wordpress",
+    color: "#21759b",
     features: [
       "Direct WordPress REST API integration",
       "Auto-publish to any post type",
@@ -25,7 +26,8 @@ export const integrations = [
     name: "Webflow",
     title: "Programmatic SEO for Webflow",
     description: "Scale your Webflow CMS with programmatic pages. No code, no limits.",
-    logo: "🟦",
+    logoKey: "webflow",
+    color: "#4353ff",
     features: [
       "Webflow CMS API integration",
       "Collection item automation",
@@ -46,7 +48,8 @@ export const integrations = [
     name: "Shopify",
     title: "Programmatic SEO for Shopify",
     description: "Create product pages, collection pages, and blog posts at scale for your Shopify store.",
-    logo: "🟢",
+    logoKey: "shopify",
+    color: "#96bf48",
     features: [
       "Product page generation",
       "Collection page automation",
@@ -67,7 +70,8 @@ export const integrations = [
     name: "Next.js",
     title: "Programmatic SEO for Next.js",
     description: "Build SEO-optimized static pages with Next.js App Router and generateStaticParams.",
-    logo: "⚫",
+    logoKey: "nextjs",
+    color: "#000000",
     features: [
       "Static site generation (SSG)",
       "Dynamic route generation",
