@@ -31,10 +31,11 @@ const footerLinks = {
     { label: "Next.js", href: "/integrations/nextjs" },
   ],
   resources: [
+    { label: "PSEO Guide", href: "/programmatic-seo-guide" },
     { label: "Guides", href: "/guides" },
+    { label: "Case Studies", href: "/case-studies" },
     { label: "Compare Tools", href: "/compare" },
-    { label: "SEOmatic Alternative", href: "/alternative/seomatic-alternative" },
-    { label: "Byword Alternative", href: "/alternative/byword-alternative" },
+    { label: "Alternatives", href: "/alternative/seomatic-alternative" },
   ],
   company: [
     { label: "Pricing", href: "/pricing" },

@@ -1,5 +1,37 @@
 export const comparisons = [
   {
+    slug: "pseo-growth-stack-vs-whalesync",
+    competitor: "Whalesync",
+    title: "PSEO Growth Stack vs Whalesync",
+    description: "Compare PSEO Growth Stack and Whalesync for programmatic SEO. See features, pricing, and which platform is right for you.",
+    competitorDescription: "Whalesync is a two-way sync tool that connects Airtable to Webflow for CMS automation.",
+    advantages: [
+      { feature: "Focus", us: "Built for programmatic SEO", them: "General data syncing tool" },
+      { feature: "Free tier", us: "Yes - 100 pages free", them: "Limited free tier" },
+      { feature: "Built-in CRM", us: "Included", them: "Not included" },
+      { feature: "AI content", us: "AI agents for unique content", them: "No AI features" },
+      { feature: "Templates", us: "SEO-optimized templates", them: "Relies on Webflow design" },
+      { feature: "Analytics", us: "Built-in SEO analytics", them: "No analytics" },
+    ],
+    verdict: "Whalesync is great for syncing Airtable to Webflow. PSEO Growth Stack is purpose-built for programmatic SEO with AI, CRM, and optimization features included.",
+  },
+  {
+    slug: "pseo-growth-stack-vs-typemat",
+    competitor: "Typemat",
+    title: "PSEO Growth Stack vs Typemat",
+    description: "Compare PSEO Growth Stack and Typemat for programmatic SEO. Free tools, features, and capabilities compared.",
+    competitorDescription: "Typemat is a free tool that generates WordPress XML files from Google Sheets data.",
+    advantages: [
+      { feature: "Page limit (free)", us: "100 pages", them: "5 pages" },
+      { feature: "CMS support", us: "WordPress, Webflow, Shopify, Next.js", them: "WordPress only" },
+      { feature: "Built-in CRM", us: "Yes", them: "No" },
+      { feature: "AI content", us: "AI agents included", them: "No" },
+      { feature: "Drip publishing", us: "Yes", them: "No" },
+      { feature: "Hosting", us: "Included option", them: "BYO hosting" },
+    ],
+    verdict: "Typemat is a simple free tool for WordPress. PSEO Growth Stack offers more platforms, higher limits, and a complete growth stack.",
+  },
+  {
     slug: "pseo-growth-stack-vs-seomatic",
     competitor: "SEOmatic",
     title: "PSEO Growth Stack vs SEOmatic",

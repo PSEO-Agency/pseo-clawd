@@ -6,6 +6,7 @@ import { useCases } from "@/data/useCases";
 import { features } from "@/data/features";
 import { integrations } from "@/data/integrations";
 import { guides } from "@/data/guides";
+import { caseStudies } from "@/data/caseStudies";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://pseo-growth-stack.com";
@@ -14,12 +15,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
     { url: baseUrl, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 1 },
     { url: `${baseUrl}/pricing`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.9 },
+    { url: `${baseUrl}/programmatic-seo-guide`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.95 },
     { url: `${baseUrl}/industries`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.9 },
     { url: `${baseUrl}/use-cases`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.9 },
     { url: `${baseUrl}/compare`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.9 },
     { url: `${baseUrl}/features`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.9 },
     { url: `${baseUrl}/integrations`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.9 },
     { url: `${baseUrl}/guides`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.9 },
+    { url: `${baseUrl}/case-studies`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.9 },
   ];
 
   // Industry pages
@@ -78,6 +81,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  // Case study pages
+  const caseStudyPages = caseStudies.map((cs) => ({
+    url: `${baseUrl}/case-studies/${cs.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.85,
+  }));
+
   return [
     ...staticPages,
     ...industryPages,
@@ -87,5 +98,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...featurePages,
     ...integrationPages,
     ...guidePages,
+    ...caseStudyPages,
   ];
 }

@@ -40,23 +40,14 @@ const navLinks = [
     ],
   },
   {
-    label: "Integrations",
-    href: "/integrations",
-    children: [
-      { label: "WordPress", href: "/integrations/wordpress" },
-      { label: "Webflow", href: "/integrations/webflow" },
-      { label: "Shopify", href: "/integrations/shopify" },
-      { label: "Next.js", href: "/integrations/nextjs" },
-    ],
-  },
-  {
     label: "Resources",
     href: "/guides",
     children: [
-      { label: "Guides", href: "/guides" },
-      { label: "Compare Tools", href: "/compare" },
-      { label: "vs SEOmatic", href: "/compare/pseo-growth-stack-vs-seomatic" },
-      { label: "vs Byword", href: "/compare/pseo-growth-stack-vs-byword" },
+      { label: "📖 PSEO Guide", href: "/programmatic-seo-guide" },
+      { label: "📚 All Guides", href: "/guides" },
+      { label: "📊 Case Studies", href: "/case-studies" },
+      { label: "🔌 Integrations", href: "/integrations" },
+      { label: "⚔️ Compare Tools", href: "/compare" },
     ],
   },
   { label: "Pricing", href: "/pricing" },
